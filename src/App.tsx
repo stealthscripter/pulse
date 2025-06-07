@@ -1,8 +1,12 @@
-import "./App.css";
+import { Route, Routes } from "react-router";
+import Home from "./pages/Home";
 
 function App() {
-  const uusedvariable = "name"
-  return <></>;
+  return (
+    <Routes>
+      <Route index element={<Home />} />
+    </Routes>
+  );
 }
 
 export default App;
