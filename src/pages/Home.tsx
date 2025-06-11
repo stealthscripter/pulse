@@ -1,4 +1,5 @@
-import { CornerRightDown, Play, SkipForward, StepForward } from "lucide-react";
+import { Play, SkipForward, StepForward } from "lucide-react";
+import { Link } from "react-router";
 import { StickyScroll } from "../components/sticky-scroll-reveal";
 import "./Home.css";
 const content = [
@@ -80,9 +81,11 @@ function Home() {
           </button>
         </div>
         <div className="text-white absolute right-6 bottom-5">
-          <button className="flex items-center gap-x-2 cursor-pointer hover:opacity-70">
-            Try Now <StepForward size={20} />
-          </button>
+          <Link to={"/play"}>
+            <button className="flex items-center gap-x-2 cursor-pointer hover:opacity-70">
+              Try Now <StepForward size={20} />
+            </button>
+          </Link>
         </div>
         <div className="text-white absolute bottom-5 text-sm left-5 w-96 font-light">
           <p>
@@ -135,7 +138,12 @@ function Home() {
           WebkitOverflowScrolling: "touch", // Smooth scrolling on iOS
         }}
       >
-        <h1 className="text-xl font-medium mb-3 flex gap-x-2">How to Play <span><Play /></span></h1>
+        <h1 className="text-xl font-medium mb-3 flex gap-x-2">
+          How to Play{" "}
+          <span>
+            <Play />
+          </span>
+        </h1>
         <StickyScroll content={content} />
       </div>
     </div>
