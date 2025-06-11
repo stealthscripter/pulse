@@ -1,26 +1,37 @@
-import ToggleButtons from "../components/toggle-button";
-import ToggleComputer from "../components/toggle-computer";
-import { useComputerStore } from "../store/useComputerStore";
-import { useSelectionStore } from "../store/useSelectionStore";
+import ComputerPickSelector from "../components/ComputerPickSelector";
+import GameScreen from "../components/GameScreen";
+import UserPickSelector from "../components/UserPickSelector";
+import { useComputerStore } from "../store/useComputerSelectionStore";
+import { useUserSelectionStore } from "../store/useUserSelectionStore";
+
 import "./play.css";
 function Play() {
-  const { selectedItems } = useSelectionStore();
-  const { isAnimating } = useComputerStore();
+  const { isAnimating, computerPick } = useComputerStore();
+  const { userPick } = useUserSelectionStore();
   return (
+    <>
     <div className="relative h-dvh flex gap-x-10 p-5 font-gruppe items-start">
       <div className="space-y-2">
         <h1 className="">User Selection</h1>
-        <ToggleButtons />
+        <UserPickSelector />
       </div>
       <div className="space-y-2">
         <h1>Computer Pick</h1>
-        <ToggleComputer />
+        <ComputerPickSelector />
       </div>
-
-      <button className={`${isAnimating ? "bg-blue-200" : ""} cursor-pointer border px-2 py-2 hover:bg-blue-500 duration-200 hover:text-white`} disabled={isAnimating}>
-        Calculate
+      <button
+        className="border py-4 px-4 cursor-pointer hover:bg-yellow-200"
+        disabled={isAnimating}
+      >
+        Start The Game
       </button>
+      
+      {userPick && userPick}
+      <br/>
+      {computerPick && computerPick}
     </div>
+    {/* <GameScreen /> */}
+    </>
   );
 }
 

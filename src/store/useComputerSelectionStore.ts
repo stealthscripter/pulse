@@ -2,26 +2,28 @@
 import { create } from 'zustand';
 
 interface ComputerStore {
-  computerPicks: string[];
+  computerPick: string | null;
   isAnimating: boolean;
   tempPick: string | null;
-  setComputerPicks: (picks: string[]) => void;
+
+  setComputerPick: (pick: string | null) => void;
   setIsAnimating: (isAnimating: boolean) => void;
   setTempPick: (pick: string | null) => void;
   resetComputerPicks: () => void;
 }
 
 export const useComputerStore = create<ComputerStore>((set) => ({
-  computerPicks: [],
+  computerPick: null,
   isAnimating: false,
   tempPick: null,
 
-  setComputerPicks: (picks) => set({ computerPicks: picks }),
+  setComputerPick: (pick) => set({ computerPick: pick }),
   setIsAnimating: (isAnimating) => set({ isAnimating }),
   setTempPick: (pick) => set({ tempPick: pick }),
+
   resetComputerPicks: () =>
     set({
-      computerPicks: [],
+      computerPick: null,
       tempPick: null,
       isAnimating: false,
     }),
