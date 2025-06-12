@@ -18,10 +18,12 @@ interface GameState {
   winnerCategory: string | null;
   history: GameRound[];
   isPlaying: boolean;
+  isPicking: boolean,
 
   setUserPick: (num: number) => void;
   playRound: () => void;
   resetGame: () => void;
+  startPick: () => void;
 }
 
 const categories = ['Desto', 'Finger', 'Caw', 'Cawter', 'Oli'];
@@ -33,6 +35,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   winnerCategory: null,
   history: [],
   isPlaying: false,
+  isPicking: false,
 
   setUserPick: (num) => set({ userPick: num }),
 
@@ -78,6 +81,8 @@ export const useGameStore = create<GameState>((set, get) => ({
     });
   },
 
+
+
   resetGame: () =>
     set({
       userPick: null,
@@ -86,4 +91,11 @@ export const useGameStore = create<GameState>((set, get) => ({
       winnerCategory: null,
       isPlaying: false,
     }),
+
+  startPick: () =>
+    set({
+      isPicking: true
+    })
+
+
 }));

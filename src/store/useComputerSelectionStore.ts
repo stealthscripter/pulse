@@ -12,7 +12,7 @@ interface ComputerStore {
   resetComputerPicks: () => void;
 }
 
-export const useComputerStore = create<ComputerStore>((set) => ({
+export const useComputerSelectionStore = create<ComputerStore>((set) => ({
   computerPick: null,
   isAnimating: false,
   tempPick: null,
