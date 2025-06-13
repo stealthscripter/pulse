@@ -1,5 +1,5 @@
 import { IterationCcw } from "lucide-react";
-import { useUserSelectionStore } from "../store/useUserSelectionStore";
+import { useUserSelectionStore } from "../../store/useUserSelectionStore";
 
 function UserPickSelector() {
   const options = ["Desto", "Finger", "Caw", "Cawter", "Oli"];

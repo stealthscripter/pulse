@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useUserSelectionStore } from "../store/useUserSelectionStore";
-import { useComputerSelectionStore } from "../store/useComputerSelectionStore";
+import { useUserSelectionStore } from "../../store/useUserSelectionStore";
+import { useComputerSelectionStore } from "../../store/useComputerSelectionStore";
 
 function ComputerPickSelector() {
   const userPick = useUserSelectionStore((state) => state.userPick);
@@ -67,7 +67,7 @@ function ComputerPickSelector() {
   }, [userPick]);
 
   return (
-    <div className="mt-6">
+    <div className="">
       <div className="space-y-2">
         {allOptions.map((option, index) => {
           const isAvailable = option !== userPick;

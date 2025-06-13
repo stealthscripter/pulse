@@ -1,6 +1,6 @@
 import { Play, SkipForward, StepForward } from "lucide-react";
 import { Link } from "react-router";
-import { StickyScroll } from "../components/sticky-scroll-reveal";
+import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 import "./Home.css";
 const content = [
   {

@@ -1,15 +1,16 @@
-import ComputerPickSelector from "./ComputerPickSelector";
+import { useComputerSelectionStore } from "../store/useComputerSelectionStore";
+import { useGameStore } from "../store/useGameStore";
+import ComputerPickSelector from "./pick/ComputerPickSelector";
 
 function ComputerSide() {
+  const isReady = useGameStore((state) => state.isReady);
+  const computerPick = useComputerSelectionStore((state) => state.computerPick);
+
   return (
     <div
-      className={`w-full h-full py-10 flex flex-col items-center transition-all duration-700 ease-in-out`}
+      className={`flex border flex-col items-center transition-all duration-700 ease-in-out px-10 space-y-4`}
     >
-      <h1 className="text-2xl">Computer Pick</h1>
-      <p className="my-2 text-zinc-700">Computer knows everything</p>
-      <div className="mt-10 space-y-4 px-10">
-        <ComputerPickSelector />
-      </div>
+      {!isReady ? <ComputerPickSelector /> : <p>{computerPick}</p>}
     </div>
   );
 }

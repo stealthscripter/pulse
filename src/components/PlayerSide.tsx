@@ -1,17 +1,16 @@
-import UserPickSelector from "./UserPickSelector";
+import { useGameStore } from "../store/useGameStore";
+import PlayerGame from "./game/PlayerGame";
+import UserPickSelector from "./pick/UserPickSelector";
 
 function PlayerSide() {
+  const isReady = useGameStore((state) => state.isReady);
+  
+
   return (
     <div
-      className={`w-full h-full flex flex-col items-center md:py-10 transition-all duration-700 ease-in-out`}
+      className={`border flex flex-col items-center transition-all duration-700 ease-in-out px-10 space-y-4`}
     >
-      <h1 className="md:text-2xl text-center">Player Pick</h1>
-      <p className="my-2 text-zinc-700 text-center md:text-base text-[0.7rem]">
-        You have to choose a pick to start the game
-      </p>
-      <div className="mt-10 space-y-4 md:px-10">
-        <UserPickSelector />
-      </div>
+      {!isReady ? <UserPickSelector /> : <PlayerGame />}
     </div>
   );
 }

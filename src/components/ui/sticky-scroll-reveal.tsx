@@ -1,7 +1,7 @@
 "use strict";
 import React, { useEffect, useRef, useState } from "react";
 import { useScroll, motion } from "motion/react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 export const StickyScroll = ({
   content,
