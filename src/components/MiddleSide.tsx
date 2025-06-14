@@ -45,7 +45,7 @@ function MiddleSide() {
           >
             {history.length > 0 ? "Play again" : "start the game"}
           </button>
-          <div className="mt-3">
+          <div className="mt-3">  
             <p>Player Finger - {playerFinger}</p>
             <p>Computer Finger - {computerFinger}</p>
           </div>

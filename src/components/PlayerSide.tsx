@@ -10,7 +10,7 @@ function PlayerSide() {
     <div
       className={`border flex flex-col items-center transition-all duration-700 ease-in-out px-10 space-y-4`}
     >
-      {!isReady ? <UserPickSelector /> : <PlayerGame />}
+      {isReady ? <UserPickSelector /> : <PlayerGame />}
     </div>
   );
 }

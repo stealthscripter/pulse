@@ -10,7 +10,7 @@ function ComputerSide() {
     <div
       className={`flex border flex-col items-center transition-all duration-700 ease-in-out px-10 space-y-4`}
     >
-      {!isReady ? <ComputerPickSelector /> : <p>{computerPick}</p>}
+      {isReady ? <ComputerPickSelector /> : <p>{computerPick}</p>}
     </div>
   );
 }
