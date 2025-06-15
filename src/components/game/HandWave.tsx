@@ -20,9 +20,9 @@ function HandWave() {
   };
 
   return (
-    <div>
+    <div className="border border-red-400 ">
       <div
-        className={`emoji -rotate-270 ${animate ? "waving" : ""}`}
+        className={`hand -rotate-270 ${animate ? "waving" : ""}`}
         onAnimationEnd={handleAnimationEnd}
       >
         <img
@@ -31,7 +31,7 @@ function HandWave() {
           style={{ transition: "opacity 0.5s ease-in-out" }}
         />
       </div>
-      <button onClick={handleClick}>Wave!</button>
+      <button onClick={handleClick} className="mt-4 border px-4 bg-red-600 text-white hover:opacity-50 cursor-pointer">Wave!</button>
     </div>
   );
 }

@@ -8,7 +8,7 @@ function PlayerSide() {
 
   return (
     <div
-      className={`border flex flex-col items-center transition-all duration-700 ease-in-out px-10 space-y-4`}
+      className={`flex flex-col transition-all duration-700 ease-in-out space-y-4 items-start`}
     >
       {isReady ? <UserPickSelector /> : <PlayerGame />}
     </div>

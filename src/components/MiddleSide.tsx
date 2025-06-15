@@ -21,11 +21,11 @@ function MiddleSide() {
       playRound(userPick ?? "" , computerPick ?? "")
   }
   return (
-    <div className="w-full flex justify-center items-center border min-h-[300px] md:min-h-[400px] lg:min-h-[500px]">
-      {!isReady ? (
-        <div className="w-full max-w-[400px] mx-auto">
+    <div className="w-full flex justify-center items-center">
+      {isReady ? (
+        <div className="mx-auto">
           <button
-            className={`w-full h-full border py-4 text-lg ${
+            className={`w-full h-full border py-4 px-10 text-lg ${
               !userPick || !computerPick
                 ? "opacity-30 cursor-not-allowed"
                 : "cursor-pointer"

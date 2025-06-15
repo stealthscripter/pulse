@@ -1,7 +1,7 @@
-.emoji {
+.hand {
   display: inline-block;
   position: relative;
-  transform-origin: 70% 70%;
+  
 }
 
 .waving {
@@ -19,11 +19,16 @@
   100% { transform: rotate(0deg); }
 }
 
-.image-layer {
+.hand img {
+  width: 100%;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
+}
+.hand {
+  position: relative;
+  width: 160px;
+  height: 140px; /* Ensure fixed height */
+  /* overflow: hidden; Hide overflow just in case */
 }

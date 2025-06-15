@@ -6,7 +6,7 @@ function UserPickSelector() {
   const { userPick, toggleSelection, resetSelection } = useUserSelectionStore();
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 px-10">
       {options.map((option, index) => (
         <button
           key={index}
